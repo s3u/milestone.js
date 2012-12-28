@@ -1,0 +1,121 @@
+<div class="navbar-fixed-top" style="background-color: white">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="#">Milestone.js</a>
+                <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        <% if(req && req.query.c) { %>
+                        <a href="/"><i class="icon-home"></i> Home</a>
+                        <% } else { %>
+                        <a href="/?c=<%=req.query.c%>"><i class="icon-home"></i> Home</a>
+                        <% } %>
+                        <a href="/setup"><i class="icon-wrench"></i> Setup</a>
+                    </p>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-left: 2em; padding-right: 2em">
+        <h1><%= title %>
+
+        <span class="btn-group pull-right">
+            <% for(index in labels) { %>
+            <button class="btn">
+                <a href="/label/<%=labels[index].name%>?c=<%=req.query.c%>"><%=labels[index].name%></a>
+            </button>
+            <% } %>
+             <button class="btn">
+                 <a href="/label?c=<%=req.query.c%>">all</a>
+             </button>
+        </span>
+        </h1>
+
+        <div id="timeline-embed"></div>
+    </div>
+
+</div>
+
+
+<div style="margin-top:400px">
+    <% for(var i = 0; i < issues.length; i++) {%>
+    <%
+    var milestone = issues[i].milestone ? issues[i].milestone.title : "Unassigned";
+    var state = issues[i].milestone ? issues[i].state : "open";
+    %>
+    <div class="blueprint <%=state%>">
+        <div class="blueprint-title">
+            <a id="<%=milestone%>"><span><%=(issues[i].milestone ? issues[i].milestone.title : "??")%></a> -
+            </span> <a href="<%=issues[i].html_url%>"><%=issues[i].title%></a>
+        </div>
+
+        <div class="summary">
+        <span>Assignee:
+                <% if(issues[i].assignee) { %>
+                <a href="<%=req.query.web%>/<%=issues[i].assignee.login%>"><%=issues[i].assignee.login%></a>
+                <% } else { %>
+                Not Assigned
+                <% }%>
+        </span> |
+            <span>Status: <%=issues[i].state%></span> |
+        <span>Milestone: <% if(issues[i].milestone) {%>
+                <a href="<%=req.query.web%>/issues?milestone=<%=issues[i].milestone.number%>"><%=issues[i].milestone.title%></a> (due on <%=issues[i].milestone.due_on%>)
+                <% } else { %>
+                Not Assigned
+                <% }%></span>
+        </div>
+        <% if(issues[i].tasks.length > 0) { %>
+            <div>Related issues:
+            <%- partial('related', issues[i].tasks) %>
+            </div>
+        <% } %>
+
+    </div>
+    <% } %>
+</div>
+
+
+<script type="text/javascript">
+    $(".task").each(function(index, element) {
+        $.getJSON(element.getAttribute("url") + "?callback=?", null, function(data) {
+            if(data.data.state === "closed") {
+                $(element).addClass("closed");
+            }
+            else {
+                $(element).addClass("open");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var source = <%-JSON.stringify(timeline, null, '\t')%>;
+        createStoryJS({
+            type: 'timeline',
+            width: "100%",
+            height: "325",
+            debug: true,
+            source: <%-JSON.stringify(timeline, null, '\t')%>,
+            css: '/stylesheets/timeline.css',
+            js: '/javascripts/timeline.js'
+        });
+
+        VMM.bindEvent("UPDATE", function() {
+            alert('clicked');
+        });
+
+        VMM.onSlideChange(function(event, n) {
+            try {
+                $(document).scrollTop( $("#M" + n).offset().top - 450);
+            }
+            catch(e) {
+                blah = true;
+            }
+        });
+    });
+
+</script>
+<script type="text/javascript" src="/javascripts/storyjs-embed.js"></script>
+<script type="text/javascript" src="/javascripts/timeline.js"></script>

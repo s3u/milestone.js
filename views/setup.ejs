@@ -1,0 +1,29 @@
+
+<h1>Setup</h1>
+
+<form class="form-horizontal" action="/setup" method="POST">
+    <fieldset>
+        <legend>Setup your project</legend>
+        <p>To get started, tell me about your GitHub or GitHub Enterprise project.</p>
+
+        <div class="control-group">
+            <label class="control-label" for="repo">Github repository URL</label>
+            <div class="controls">
+                <input id="repo" name="repo" type="text" required placeholder="Type your github repository URL here ...">
+            </div>
+        </div>
+        <div class="control-group">
+            <label  class="control-label" for="name">Name for your repository</label>
+            <div class="controls">
+                <input id="name" name="name" type="text" required placeholder="Enter a name for your project ...">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

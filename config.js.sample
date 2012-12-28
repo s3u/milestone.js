@@ -1,0 +1,12 @@
+
+// Specify your GitHub client ID
+exports.client_id = "";
+
+// Specify your GitHub secret
+exports.client_secret = "";
+
+// Specify the default GitHub repo
+exports.repo = "";
+
+// Specify a name for the project
+exports.name = "";
