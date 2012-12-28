@@ -1,4 +1,4 @@
-<div class="navbar-fixed-top" style="background-color: white">
+<div class="navbar-fixed-top white-bg">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container-fluid">
@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div style="padding-left: 2em; padding-right: 2em">
+    <div class="labels">
         <h1><%= title %>
 
         <span class="btn-group pull-right">
@@ -38,7 +38,7 @@
 </div>
 
 
-<div style="margin-top:400px">
+<div class="issues">
     <% for(var i = 0; i < issues.length; i++) {%>
     <%
     var milestone = issues[i].milestone ? issues[i].milestone.title : "Unassigned";
@@ -65,7 +65,7 @@
                 Not Assigned
                 <% }%></span>
         </div>
-        <% if(issues[i].tasks.length > 0) { %>
+        <% if(issues[i].tasks && issues[i].tasks.length > 0) { %>
             <div>Related issues:
             <%- partial('related', issues[i].tasks) %>
             </div>
