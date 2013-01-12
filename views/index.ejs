@@ -20,17 +20,15 @@
     </div>
 
     <div class="labels">
-        <h1><%= title %>
+        <h1><%= state.name%>
 
         <span class="btn-group pull-right">
-            <% for(index in labels) { %>
+            <% for(index in state.labels) { %>
             <button class="btn">
-                <a href="/label/<%=labels[index].name%>?c=<%=req.query.c%>"><%=labels[index].name%></a>
+                <a
+                        href="/label/<%=state.labels[index]%>?c=<%=req.query.c%>"><%=state.labels[index] === "" ? "all" : state.labels[index]%></a>
             </button>
             <% } %>
-             <button class="btn">
-                 <a href="/label?c=<%=req.query.c%>">all</a>
-             </button>
         </span>
         </h1>
 
