@@ -12,6 +12,9 @@
             <a href="{{html_url}}"><span class="issue-title">
             {{title}}
             </a>
+            {{#unassigned}}
+            <span class="label label-important">Remember to assign to a milestone</span>
+            {{/unassigned}}
             <span class="task-{{state}}">{{state}}</span>
             <ul>
                 {{#tasks}}
