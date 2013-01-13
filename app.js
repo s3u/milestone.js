@@ -21,9 +21,9 @@
  */
 
 var express = require('express'),
-    partials = require('express-partials'),
     http = require('http'),
     path = require('path'),
+    HoganTemplateRenderer = require('hogan-template-compiler'),
     routes = require('./lib/routes.js'),
     config = require('./config.js');
 
@@ -33,19 +33,21 @@ process.on('uncaughtException', function(err) {
 
 var app = express();
 
-app.use(partials());
 app.use(express.bodyParser());
 
 app.configure(function () {
     app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
-    app.use(express.favicon());
+    app.set('view engine', 'html')
+    app.set('layout', 'layout')
+    app.engine('html', require('hogan-express'));
+
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, 'public')), {
+        maxAge: 86400
+    });
 });
 
 app.configure('development', function () {
@@ -55,9 +57,18 @@ app.configure('development', function () {
 app.get('/', routes.index);
 app.get('/setup', routes.setup);
 app.post('/setup', routes.saveSetup);
-app.get('/label/:label', routes.label);
+app.get('/label/:label/:milestone', routes.label);
 app.get('/label', routes.label);
 app.get('/oauth', routes.oauth);
+app.get('/issues/:label/:milestone', routes.issues);
+
+app.get("/templates.js",  function(req, res) {
+    var hoganTemplateRenderer = HoganTemplateRenderer({
+        partialsDirectory: __dirname + "/public/templates"
+    })
+    res.contentType("application/javascript");
+    res.send(hoganTemplateRenderer.getSharedTemplates());
+});
 
 
 http.createServer(app).listen(app.get('port'), function () {

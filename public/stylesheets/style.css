@@ -22,21 +22,36 @@ a {
 table.summary {
     width: 80%
 }
-div.blueprint {
+div.issue {
     padding: 1em;
     border: 1px dotted #eaeaea;
 }
-div.blueprint-title {
-    font-size: large;
+div.issue-title {
     font-weight: bold;
 }
 
-div.blueprint a, a:visited {
+div.issue a, a:visited {
     color: black;
-    font-size: medium;
 }
+
 span.task {
     padding: 3px;
+}
+
+span.task-open {
+    background-color: #f89406;
+    border-radius: 3px;
+    padding: 2px 4px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+span.task-closed {
+    background-color: #999999;
+    border-radius: 3px;
+    padding: 2px 4px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .closed {
@@ -61,4 +76,20 @@ span.open {
 
 span.closed a, a:visited {
     color: black;
+}
+
+.collapsibleList li{
+    list-style-image:url('/images/button.png');
+}
+
+li.collapsibleListOpen{
+    list-style-image:url('/images/button-open.png');
+}
+
+li.collapsibleListClosed{
+    list-style-image:url('/images/button-closed.png');
+}
+
+div#timeline-embed {
+    margin-left: 5% !important
 }

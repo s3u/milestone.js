@@ -1,0 +1,24 @@
+{{#issues}}
+<div class="issue {{state}}">
+
+    {{#assignee}}
+    <div class="pull-right">
+        <a href="{{href}}"><img src="{{avatar_url}}" alt="{{login}}" width="40" height="40"/></a>
+    </div>
+    {{/assignee}}
+
+    <ul class="collapsibleList">
+        <li>
+            <a href="{{html_url}}"><span class="issue-title">
+            {{title}}
+            </a>
+            <span class="task-{{state}}">{{state}}</span>
+            <ul>
+                {{#tasks}}
+                <li class="task" url="{{url}}">{{title}}</li>
+                {{/tasks}}
+            </ul>
+        </li>
+    </ul>
+</div>
+{{/issues}}
