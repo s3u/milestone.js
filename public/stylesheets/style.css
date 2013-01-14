@@ -1,5 +1,10 @@
 body {
     padding: 50px;
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #333333;
 }
 
 a {
@@ -11,7 +16,7 @@ a {
 }
 
 .issues {
-    margin-top: 400px;
+    margin-top: 450px;
 }
 
 .labels {
@@ -92,4 +97,12 @@ li.collapsibleListClosed{
 
 div#timeline-embed {
     margin-left: 5% !important
+}
+
+h1.summary {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    background: #eaeaea !important;
+    border-radius: 3px !important;
+    padding: 4px 8px !important;
 }
