@@ -1,16 +1,9 @@
-<blockquote>
-    <div class="row pull-right">
-        <div class="span2">
-            <span class="summary">status: {{milestone.state}}</span>
-        </div>
-        <div class="span3">
-            <span class="summary">due on: {{milestone.due_date}}</span>
-        </div>
-        <div class="span2">
-            <span class="summary">open: {{milestone.open_issues}}</span>
-        </div>
-        <div class="span2">
-            <span class="summary">closed: {{milestone.closed_issues}}</span>
-        </div>
+<div class="progress">
+    <div class="bar bar-success"
+         style="width: {{milestone.closed}}%;">
+        {{milestone.closed_issues}} closed
     </div>
-</blockquote>
+    <div class="bar bar-warning" style="width: {{milestone.open}}%;">
+        {{milestone.open_issues}} open
+    </div>
+</div>

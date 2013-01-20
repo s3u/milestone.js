@@ -3,14 +3,14 @@
 
     {{#assignee}}
     <div class="pull-right">
-        <a href="{{href}}"><img src="{{avatar_url}}" alt="{{login}}" width="40" height="40"/></a>
+        <a href="{{href}}"><img src="{{avatar_url}}" alt="{{login}}" width="20" height="20"/></a>
     </div>
     {{/assignee}}
 
     <ul class="collapsibleList">
         <li>
             <a href="{{html_url}}"><span class="issue-title">
-            {{title}}
+            {{#milestone}}[{{title}}] {{/milestone}}{{title}}
             </a>
             {{#unassigned}}
             <span class="label label-important">Remember to assign to a milestone</span>
@@ -18,7 +18,7 @@
             <span class="task-{{state}}">{{state}}</span>
             <ul>
                 {{#tasks}}
-                <li class="task" url="{{url}}">{{title}}</li>
+                <li class="task" url="{{url}}">{{#milestone}}[{{title}}] {{/milestone}}{{title}}</li>
                 {{/tasks}}
             </ul>
         </li>

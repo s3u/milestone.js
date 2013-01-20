@@ -278,3 +278,17 @@
 .vco-timeline .vco-navigation .timenav .time .time-interval .era6{color:#0088cc;filter:alpha(opacity=50);-khtml-opacity:0.5;-moz-opacity:0.5;opacity:0.5;}
 .vco-timeline .vco-navigation .timenav .time .time-interval-major{white-space:nowrap;position:absolute;top:5px;left:0px;}.vco-timeline .vco-navigation .timenav .time .time-interval-major div{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAQAQMAAADtUYf0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyOTAzRjI3REIzNDcxMUUxQUQ3QUZCOThEODQ1NDhCNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyOTAzRjI3RUIzNDcxMUUxQUQ3QUZCOThEODQ1NDhCNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI5MDNGMjdCQjM0NzExRTFBRDdBRkI5OEQ4NDU0OEI3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjI5MDNGMjdDQjM0NzExRTFBRDdBRkI5OEQ4NDU0OEI3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+DPWNfQAAAANQTFRFzMzMylJEJwAAAAtJREFUCB1jYMAPAAAgAAHDvpOtAAAAAElFTkSuQmCC);background-position:left top;background-repeat:no-repeat;padding-top:15px;position:absolute;height:15px;left:0px;display:block;font-weight:bold;font-size:12px;line-height:20px;text-transform:uppercase;text-align:left;text-indent:0px;white-space:nowrap;color:#333333;margin-left:0px;margin-right:0px;margin-top:1px;z-index:5;}.vco-timeline .vco-navigation .timenav .time .time-interval-major div strong{font-weight:bold;color:#000000;}
 @media screen and (-webkit-max-device-pixel-ratio:1){}@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){}@media screen and (max-device-width:480px) and (orientation:portrait){.storyjs-embed.full-embed{height:557px !important;width:320px !important;}.storyjs-embed.full-embed .vco-feature{height:356px !important;}}@media screen and (max-device-width:480px) and (orientation:landscape){.storyjs-embed.full-embed{height:409px !important;width:480px !important;}.storyjs-embed.full-embed .vco-feature{height:208px !important;}}@media screen and (min-device-width:481px) and (orientation:portrait){}@media screen and (min-device-width:481px) and (orientation:landscape){}@media (max-width:480px){}@media only screen and (max-width:480px){}
+
+/* Overrides */
+
+.vco-storyjs blockquote, .vco-storyjs blockquote p {
+    font-size: 14pt;
+    line-height: 1em;
+}
+
+.vco-storyjs h1, .vco-storyjs h2, .vco-storyjs h3, .vco-storyjs h4, .vco-storyjs h5, .vco-storyjs h6 {
+    font-weight: normal;
+    color: #999999;
+    text-transform: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important
+}

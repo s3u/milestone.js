@@ -31,33 +31,30 @@
 
 </div>
 
-<div id="issues" class="issues"></div>
+<div id="issues"  class="issues"></div>
 
 <script type="text/javascript">
 
     $(document).ready(function() {
-
         var source = {{&source}};
         var label = "{{&label}}";
         createStoryJS({
             type: 'timeline',
             left: "10%",
             width: "90%",
-            height: "375",
+            height: "300",
             "start_at_slide": {{startAtSlide}},
             source: source,
             css: '/stylesheets/timeline.css',
             js: '/javascripts/timeline.js'
         });
 
-        VMM.bindEvent("UPDATE", function() {
-            alert('clicked');
-        });
-
         VMM.onSlideChange(function(event, n) {
             // Get data for the milestone and label
+            $("body").css("cursor", "progress");
             $.get("/templates/issues.html", function(template) {
                 $.getJSON(source.timeline.date[n].href, function(data) {
+                    $("body").css("cursor", "auto");
                     if(data.length > 0) {
                         var html = templates.issues({
                             issues: data
