@@ -1,5 +1,4 @@
 body {
-    padding: 50px;
 }
 
 a {
@@ -11,12 +10,13 @@ a {
 }
 
 .issues {
-    margin-top: 370px;
+    width: 94%;
+    margin-left: 3%;
 }
 
 .labels {
-    padding-left: 2em;
-    padding-right: 2em;
+    width: 94%;
+    margin-left: 3%;
 }
 
 table.summary {
@@ -90,7 +90,7 @@ li.collapsibleListClosed{
 }
 
 div#timeline-embed {
-    margin-left: 5% !important
+    margin-left: 3% !important
 }
 
 ul, ol {
