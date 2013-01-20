@@ -1,35 +1,33 @@
-<div class="navbar-fixed-top white-bg">
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="container-fluid">
-                <a class="brand" href="#">Milestone.js</a>
-                <div class="nav-collapse collapse">
-                    <p class="navbar-text pull-right">
-                        {{#nav}}
-                            <a href="{{href}}"><i class="{{class}}"></i> {{name}}</a>
-                        {{/nav}}
-                    </p>
-                </div>
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#">Milestone.js</a>
+            <div class="nav-collapse collapse">
+                <p class="navbar-text pull-right">
+                    {{#nav}}
+                        <a href="{{href}}"><i class="{{class}}"></i> {{name}}</a>
+                    {{/nav}}
+                </p>
             </div>
         </div>
     </div>
-
-    <div class="labels">
-        <h1>{{state.name}}
-
-        <span class="btn-group pull-right">
-            {{#labels}}
-            <button class="btn">
-                <a href="/label/{{name}}/{{req.params.milestone}}?c={{req.query.c}}">{{name}}</a>
-            </button>
-            {{/labels}}
-        </span>
-        </h1>
-    </div>
-
-    <div id="timeline-embed"></div>
-
 </div>
+
+<div class="labels">
+    <h1>{{state.name}}
+
+    <span class="btn-group pull-right">
+        {{#labels}}
+        <button class="btn">
+            <a href="/label/{{name}}/{{req.params.milestone}}?c={{req.query.c}}">{{name}}</a>
+        </button>
+        {{/labels}}
+    </span>
+    </h1>
+</div>
+
+<div id="timeline-embed"></div>
+
 
 <div id="issues"  class="issues"></div>
 
