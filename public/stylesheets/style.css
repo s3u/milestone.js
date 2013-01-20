@@ -96,3 +96,11 @@ div#timeline-embed {
 ul, ol {
     margin: 0 0 3px 25px;
 }
+
+.progress .bar {
+    line-height: 2;
+}
+
+.progress .bar span {
+    overflow: hidden;
+}
