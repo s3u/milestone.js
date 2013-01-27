@@ -1,5 +1,8 @@
 <div>
     <a href="{{issue.html_url}}">{{#issue.milestone}}[{{issue.milestone.title}}]
         {{/issue.milestone}}{{issue.title}}</span></a>
-    <span class="task-{{issue.state}}">{{issue.state}}</span>
+    <span class="label task-{{issue.state}}">{{issue.state}}</span>
+    {{#issue.labels}}
+    <span class="label" style="background-color: #{{color}}">{{name}}</span>
+    {{/issue.labels}}
 </div>

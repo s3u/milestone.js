@@ -15,7 +15,10 @@
             {{#unassigned}}
             <span class="label label-important">Remember to assign to a milestone</span>
             {{/unassigned}}
-            <span class="task-{{state}}">{{state}}</span>
+            <span class="label task-{{state}}">{{state}}</span>
+            {{#labels}}
+            <span class="label" style="background-color: #{{color}}">{{name}}</span>
+            {{/labels}}
             <ul>
                 {{#tasks}}
                 <li class="task" url="{{url}}">{{#milestone}}[{{title}}] {{/milestone}}{{title}}</li>
